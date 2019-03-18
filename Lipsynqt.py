@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 from PyQt5.uic import loadUi
 
 if __name__ == '__main__':

@@ -6,67 +6,131 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>892</width>
-    <height>735</height>
+    <width>1053</width>
+    <height>791</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Lipsynqt</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QFrame" name="Eventinfo">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QFrame" name="frame">
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QLineEdit" name="EventTitle"/>
-            </item>
-            <item>
-             <widget class="QDateEdit" name="EventDate"/>
-            </item>
-            <item>
-             <widget class="QSpinBox" name="actno"/>
-            </item>
-            <item>
-             <widget class="QPushButton" name="RunButton">
-              <property name="text">
-               <string>Run</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTreeWidget" name="lineupdisplay">
-           <column>
-            <property name="text">
-             <string>Order</string>
+       <widget class="QTabWidget" name="Eventinfo">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Search</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Queen</string>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
             </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Song</string>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QPushButton" name="BackButton">
+               <property name="text">
+                <string>Back</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="ForwardButton">
+               <property name="text">
+                <string>Forward</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="RefreshButton">
+               <property name="text">
+                <string>Refresh</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="AddToShowButton">
+               <property name="text">
+                <string>Add To Show</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWebEngineView" name="WebView">
+            <property name="url">
+             <url>
+              <string>https://www.youtube.com/</string>
+             </url>
             </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Link</string>
-            </property>
-           </column>
-          </widget>
-         </item>
-        </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="EventinfoPage1" native="true">
+         <attribute name="title">
+          <string>Show</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QFrame" name="frame">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLineEdit" name="EventTitle"/>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="EventDate"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="actno"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="RunButton">
+               <property name="text">
+                <string>Run</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTreeWidget" name="lineupdisplay">
+            <column>
+             <property name="text">
+              <string>Order</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Queen</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Song</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Link</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -78,7 +142,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>892</width>
+     <width>1053</width>
      <height>21</height>
     </rect>
    </property>
@@ -121,6 +185,78 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>BackButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WebView</receiver>
+   <slot>back()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>525</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ForwardButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WebView</receiver>
+   <slot>forward()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>401</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>525</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RefreshButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WebView</receiver>
+   <slot>reload()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>649</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>525</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>395</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
