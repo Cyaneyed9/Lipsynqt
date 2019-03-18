@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/macos,linux,python,windows
-# Edit at https://www.gitignore.io/?templates=macos,linux,python,windows
+# Created by https://www.gitignore.io/api/macos,linux,python,windows,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=macos,linux,python,windows,visualstudiocode
 
 ### Linux ###
 *~
@@ -166,6 +166,17 @@ dmypy.json
 ### Python Patch ###
 .venv/
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -191,4 +202,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/macos,linux,python,windows
+# End of https://www.gitignore.io/api/macos,linux,python,windows,visualstudiocode
+.vscode/launch.json
+.vscode/settings.json
