@@ -51,6 +51,7 @@ dependencies:
   - zlib=1.2.11=h62dcd97_3
   - pip:
     - altgraph==0.16.1
+    - asyncqt==0.7.0
     - macholib==1.11
     - pefile==2018.8.8
     - pyinstaller==3.4
