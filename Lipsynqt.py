@@ -10,7 +10,7 @@ if __name__ == '__main__':
     app.setApplicationName("Lipsynqt")
 
     # create a window
-    main_window = loadUi(Path.cwd()/"Lipsynqt.ui")
-
+    main_window = loadUi(Path(__file__).parent/"Lipsynqt.ui")
+    main_window.show()
     # execute the application
     sys.exit(app.exec_())
