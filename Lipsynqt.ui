@@ -19,7 +19,15 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QToolBox" name="Tabs">
-        <widget class="QWidget" name="TabsPage1" native="true">
+        <widget class="QWidget" name="TabsPage1">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1027</width>
+           <height>654</height>
+          </rect>
+         </property>
          <attribute name="label">
           <string>Search</string>
          </attribute>
@@ -75,7 +83,15 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="TabsPage2" native="true">
+        <widget class="QWidget" name="TabsPage2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1027</width>
+           <height>654</height>
+          </rect>
+         </property>
          <attribute name="label">
           <string>Lineup</string>
          </attribute>
@@ -254,7 +270,7 @@
      <x>0</x>
      <y>0</y>
      <width>1053</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLine_up_selection">
@@ -307,10 +323,16 @@
    <property name="text">
     <string>About Lipsynqt</string>
    </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
   </action>
   <action name="actionAbout_Qt">
    <property name="text">
     <string>About Qt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutQtRole</enum>
    </property>
   </action>
  </widget>
