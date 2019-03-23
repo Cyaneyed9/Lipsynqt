@@ -50,6 +50,22 @@ class About_Window(QtWidgets.QMessageBox):
             else:
                 continue
 
+class Song():
+    def __init__(self,songtitle=None,url=None):
+        self.songtitle=songtitle
+        self.url=url
+        self.filename=Path()
+        self.queen=None
+        self.progress=None
+        self.downloaded=self.filename.exists() and self.filename.is_file()
+
+def pickloc(parent,caption="Pick Download Location",startdirectory=str(Path.home()/"Desktop")):
+    ##make test to make sure that start directory is valid, if not then direct to another folder or offer to make one on the desktop... maybe idk?
+    dialog=QtWidgets.QFileDialog(parent,caption,startdirectory)
+    dialog.show()
+
+
+
 def create_ui():
     """Loads the UI from the .ui file and instantiates it and connects any signals which could not be connected in designer
 
@@ -60,6 +76,8 @@ def create_ui():
     #connect the about actions to the corresponding about message they should display when triggered
     main_window.actionAbout_Qt.triggered.connect(QtWidgets.QApplication.instance().aboutQt)
     main_window.actionAbout.triggered.connect(About_Window(parent = main_window).show)
+    main_window.pickloc.clicked.connect(lambda: pickloc(main_window))
+    main_window.actno.valueChanged.connect(main_window.lineupdisplay.setRowCount)
     return main_window
 
 if __name__ == '__main__':
