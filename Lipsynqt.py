@@ -51,6 +51,7 @@ class About_Window(QtWidgets.QMessageBox):
                 continue
 
 class Song():
+    ##make sure the songs save as mp3
     def __init__(self,songtitle=None,url=None):
         self.songtitle=songtitle
         self.url=url
