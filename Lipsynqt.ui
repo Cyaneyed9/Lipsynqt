@@ -6,67 +6,258 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>892</width>
-    <height>735</height>
+    <width>1053</width>
+    <height>791</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Lipsynqt</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QFrame" name="Eventinfo">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QFrame" name="frame">
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QLineEdit" name="EventTitle"/>
-            </item>
-            <item>
-             <widget class="QDateEdit" name="EventDate"/>
-            </item>
-            <item>
-             <widget class="QSpinBox" name="actno"/>
-            </item>
-            <item>
-             <widget class="QPushButton" name="RunButton">
-              <property name="text">
-               <string>Run</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTreeWidget" name="lineupdisplay">
-           <column>
-            <property name="text">
-             <string>Order</string>
+       <widget class="QToolBox" name="Tabs">
+        <widget class="QWidget" name="TabsPage1">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1027</width>
+           <height>654</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Search</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
             </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Queen</string>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
             </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Song</string>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QPushButton" name="BackButton">
+               <property name="text">
+                <string>Back</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="ForwardButton">
+               <property name="text">
+                <string>Forward</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="RefreshButton">
+               <property name="text">
+                <string>Refresh</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="AddToShowButton">
+               <property name="text">
+                <string>Add To Show</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWebEngineView" name="WebView">
+            <property name="url">
+             <url>
+              <string>https://www.youtube.com/</string>
+             </url>
             </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Link</string>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="TabsPage2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1027</width>
+           <height>654</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Lineup</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QFrame" name="frame">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLineEdit" name="EventTitle"/>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="EventDate">
+               <property name="calendarPopup">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="actno"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="RunButton">
+               <property name="text">
+                <string>Download All</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="text">
+                <string>Export</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="lineupdisplay">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustIgnored</enum>
             </property>
-           </column>
-          </widget>
-         </item>
-        </layout>
+            <property name="dragEnabled">
+             <bool>true</bool>
+            </property>
+            <property name="dragDropOverwriteMode">
+             <bool>false</bool>
+            </property>
+            <property name="dragDropMode">
+             <enum>QAbstractItemView::DragDrop</enum>
+            </property>
+            <property name="defaultDropAction">
+             <enum>Qt::MoveAction</enum>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="gridStyle">
+             <enum>Qt::DotLine</enum>
+            </property>
+            <property name="rowCount">
+             <number>50</number>
+            </property>
+            <property name="columnCount">
+             <number>5</number>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>175</number>
+            </attribute>
+            <attribute name="horizontalHeaderMinimumSectionSize">
+             <number>175</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderMinimumSectionSize">
+             <number>30</number>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <column>
+             <property name="text">
+              <string>Queen</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Song</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>URL</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Download Progress</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Filename</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -78,8 +269,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>892</width>
-     <height>21</height>
+     <width>1053</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLine_up_selection">
@@ -96,8 +287,16 @@
      <string>Edit</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
    <addaction name="menuLine_up_selection"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSave">
@@ -120,7 +319,95 @@
     <string>Quit</string>
    </property>
   </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About Lipsynqt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutQtRole</enum>
+   </property>
+  </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>395</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BackButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WebView</receiver>
+   <slot>back()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ForwardButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WebView</receiver>
+   <slot>forward()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>401</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RefreshButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WebView</receiver>
+   <slot>reload()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>651</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
